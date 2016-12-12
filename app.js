@@ -1,6 +1,6 @@
 (function (Builder, DomHelper) {
     var canvas = DomHelper.getById('builder-canvas'),
-         helpInfoView = DomHelper.getById('help-info');
+        helpInfoView = DomHelper.getById('help-info');
 
     var controls = {
         reset: DomHelper.getById('reset-builder'),
