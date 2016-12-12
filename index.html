@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Parallelogram Builder</title>
+    <link rel="stylesheet" type="text/css" href="assets/app.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="editor-container left-container">
+            <canvas id="builder-canvas" width="1200" height="700"></canvas>
+        </div>
+
+        <div class="controls-container">
+            <button class="main-button reset-button" id="reset-builder">RESET</button>
+        </div>
+
+        <div class="info-container">
+            <button class="main-button" id="show-help-info">ABOUT</button>
+            <div id="help-info" class="hide modal">
+                <button class="main-button right" id="hide-help-info">BACK TO BUILDER</button>
+
+                <div class="about-text">
+                    <h3>Parallelogram Builder</h3>
+                    <p>
+                    This application is intended for building particular geometrical shapes (parallelogram and circle) based on user input. By clicking 3 times on a webpage, user specifies 3 points to be considered as parallelogram tops. The 4th top is calculated automatically and a parallelogram is drawn. There is also automatically a circle drawn, which area and the center of mass are the same as parallelogram has.
+                    </p>
+
+                    <p>
+                    The coordinates of the selected points, centre of mass and area (both for parallelogram and circle) are displayed next to appropriate items (in pixels and square pixels accordingly).
+                    Positions of the selected points can be changed by dragging them on the screen. In this case, parallelogram and circle are updated accordingly (as well as their areas and other numeric data).
+                    ‘Reset’ button may be used for erasing the screen contents.
+                    </p>
+
+                    <footer>
+                    Author - Bohdan Liashenko (liashenko.bohdan@gmail.com)
+                    © 2016
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="shapes-builder/core/modules.js"></script>
+    <script src="shapes-builder/helpers/helpers.js"></script>
+    <script src="shapes-builder/helpers/event-emitter.js"></script>
+
+    <script src="shapes-builder/arithmetic/distance-calculation.js"></script>
+    <script src="shapes-builder/arithmetic/collision-check.js"></script>
+    <script src="shapes-builder/arithmetic/geom-calculation.js"></script>
+
+    <script src="shapes-builder/controls/control-events.js"></script>
+    <script src="shapes-builder/controls/mouse-control.js"></script>
+
+    <script src="shapes-builder/shapes/primitive-circle.js"></script>
+    <script src="shapes-builder/shapes/circle.js"></script>
+    <script src="shapes-builder/shapes/parallelogram.js"></script>
+
+    <script src="shapes-builder/ui/canvas-render.js"></script>
+    <script src="shapes-builder/ui/controller.js"></script>
+
+    <script src="shapes-builder/builder.js"></script>
+    <script src="dom/dom-helper.js"></script>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
