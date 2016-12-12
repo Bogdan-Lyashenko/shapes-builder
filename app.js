@@ -1,19 +1,17 @@
 (function (Builder, DomHelper) {
-    var canvas = DomHelper.getById('builder-canvas');
+    var canvas = DomHelper.getById('builder-canvas'),
+         helpInfoView = DomHelper.getById('help-info');
 
     var controls = {
-            reset: DomHelper.getById('reset-builder'),
-            showHelpInfo: DomHelper.getById('show-help-info'),
-            hideHelpInfo: DomHelper.getById('hide-help-info')
-        };
-
-    var helpInfoView = DomHelper.getById('help-info');
-    var statusInfoView = DomHelper.getById('status-info');
+        reset: DomHelper.getById('reset-builder'),
+        showHelpInfo: DomHelper.getById('show-help-info'),
+        hideHelpInfo: DomHelper.getById('hide-help-info')
+    };
 
     Builder.init(canvas);
     
-    Builder.onStatusUpdate(function () {
-        
+    controls.reset.addEventListener('click', function () {
+        Builder.reset();
     });
 
     controls.showHelpInfo.addEventListener('click', function () {
@@ -22,10 +20,6 @@
 
     controls.hideHelpInfo.addEventListener('click', function () {
         DomHelper.hide(helpInfoView)
-    });
-
-    controls.reset.addEventListener('click', function () {
-        Builder.reset();
     });
     
 })(
